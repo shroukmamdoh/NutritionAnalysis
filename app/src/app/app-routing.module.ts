@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'home', loadChildren: () => import('./modules/analyze-info/analyze-info.module').then((m) => m.AnalyzeInfoModule)},
+  { path: '**', redirectTo: 'home' }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
