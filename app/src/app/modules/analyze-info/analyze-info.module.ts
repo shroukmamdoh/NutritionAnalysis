@@ -5,6 +5,7 @@ import { AnalysisResultComponent } from './components/analysis-result/analysis-r
 import { IngredientDetailsComponent } from './components/analysis-result/ingredient-details/ingredient-details.component';
 import { FullyIngredientsDetailsComponent } from './components/analysis-result/fully-ingredients-details/fully-ingredients-details.component';
 import { AnalyzeInfoRoutingModule } from './analyze-info-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,6 @@ import { AnalyzeInfoRoutingModule } from './analyze-info-routing.module';
     IngredientDetailsComponent,
     FullyIngredientsDetailsComponent,
   ],
-  imports: [CommonModule, AnalyzeInfoRoutingModule],
+  imports: [CommonModule, AnalyzeInfoRoutingModule, ReactiveFormsModule],
 })
 export class AnalyzeInfoModule {}
