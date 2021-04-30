@@ -3,5 +3,6 @@
     <a (click)="navigateToHome()"> Back </a>
   </div>
   <app-ingredient-details [ingredients]="ingredientInfo.ingredients"></app-ingredient-details>
-  <button *ngIf="ingredientInfo.ingredients">Total Nutrition</button>
+  <app-fully-ingredients-details [nutritionFacts]="ingredientInfo" *ngIf="isShowNutritionFacts && ingredientInfo.ingredients"></app-fully-ingredients-details>
+  <button *ngIf="ingredientInfo.ingredients" (click)="showNutritionFacts()">Total Nutrition</button>
 </div>

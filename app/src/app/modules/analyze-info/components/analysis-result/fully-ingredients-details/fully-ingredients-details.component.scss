@@ -1,0 +1,30 @@
+.facts-wrapper {
+  border: 1px solid black;
+  margin-top: 40px;
+  max-width: 400px;
+  padding: 12px;
+  border-radius: 2px;
+  min-width: 300px;
+  h2 {
+    color: #4caf50;
+    text-align: center;
+  }
+  .cal-value {
+    font-weight: normal !important;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    .caption {
+      font-weight: bold;
+    }
+    li {
+      padding: 8px 0;
+      border-top: 2px solid #d5d7d8;
+      span.name {
+        font-weight: bold;
+        margin-right: 18px;
+      }
+    }
+  }
+}

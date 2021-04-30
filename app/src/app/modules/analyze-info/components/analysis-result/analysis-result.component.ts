@@ -17,6 +17,7 @@ export class AnalysisResultComponent implements OnInit {
     this._destroy$.complete();
   }
   ingredientInfo: IngredientFullInfo;
+  isShowNutritionFacts = false;
   constructor(
     private analysisService: AnalysisService,
     private router: Router
@@ -32,5 +33,8 @@ export class AnalysisResultComponent implements OnInit {
   }
   navigateToHome() {
     this.router.navigateByUrl('home');
+  }
+  showNutritionFacts() {
+    this.isShowNutritionFacts = true;
   }
 }

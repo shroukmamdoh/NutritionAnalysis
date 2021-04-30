@@ -1,1 +1,59 @@
-<p>fully-ingredients-details works!</p>
+<div class="facts-wrapper">
+  <div class="title">
+    <h2>Nutrition Facts</h2>
+    <h4>Calories <span class="cal-value">{{nutritionFacts.calories}}</span></h4>
+  </div>
+  <ul>
+    <li class="caption">Amount Per Serving</li>
+    <li>
+      <span class="name">Fat</span>
+      {{getQuntity(nutritionFacts.totalNutrients['FAT'].quantity)}}
+      {{nutritionFacts.totalNutrients['FAT'].unit}}
+    </li>
+    <li>
+      <span class="name">Cholesterol</span>
+      {{getQuntity(nutritionFacts.totalNutrients['CHOLE'].quantity)}}
+      {{nutritionFacts.totalNutrients['CHOLE'].unit}}
+    </li>
+    <li>
+      <span class="name">Sodium</span>
+      {{getQuntity(nutritionFacts.totalNutrients['NA'].quantity)}}
+      {{nutritionFacts.totalNutrients['NA'].unit}}
+    </li>
+    <li>
+      <span class="name">Fiber</span>
+      {{getQuntity(nutritionFacts.totalNutrients['FIBTG'].quantity)}}
+      {{nutritionFacts.totalNutrients['FIBTG'].unit}}
+    </li>
+    <li>
+      <span class="name">Sugars</span>
+      {{getQuntity(nutritionFacts.totalNutrients['SUGAR'].quantity)}}
+      {{nutritionFacts.totalNutrients['SUGAR'].unit}}
+    </li>
+    <li>
+      <span class="name">Protein</span>
+      {{getQuntity(nutritionFacts.totalNutrients['PROCNT'].quantity)}}
+      {{nutritionFacts.totalNutrients['PROCNT'].unit}}
+    </li>
+    <li>
+      <span class="name">Vitamin D</span>
+      {{getQuntity(nutritionFacts.totalNutrients['VITD'].quantity)}}
+      {{nutritionFacts.totalNutrients['VITC'].unit}}
+    </li>
+    <li>
+      <span class="name">Calcium</span>
+      {{getQuntity(nutritionFacts.totalNutrients['CA'].quantity)}}
+      {{nutritionFacts.totalNutrients['CA'].unit}}
+    </li>
+    <li>
+      <span class="name">Iron</span>
+      {{getQuntity(nutritionFacts.totalNutrients['FE'].quantity)}}
+      {{nutritionFacts.totalNutrients['FE'].unit}}
+    </li>
+    <li>
+      <span class="name">Potassium</span>
+      {{getQuntity(nutritionFacts.totalNutrients['K'].quantity)}}
+      {{nutritionFacts.totalNutrients['K'].unit}}
+    </li>
+  </ul>
+</div>
