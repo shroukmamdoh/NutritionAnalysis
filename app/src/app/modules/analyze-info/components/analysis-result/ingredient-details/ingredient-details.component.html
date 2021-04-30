@@ -1,1 +1,23 @@
-<p>ingredient-details works!</p>
+<div class="table-wrapper" *ngIf="ingredients">
+  <table>
+    <thead>
+      <tr>
+        <th>Quantity</th>
+        <th>Unit</th>
+        <th>Food</th>
+        <th>Weight</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of ingredients">
+        <td>{{ item.parsed[0].quantity }}</td>
+        <td>{{ item.parsed[0].measure }}</td>
+        <td>{{ item.parsed[0].food }}</td>
+        <td>{{ item.parsed[0].weight }} g</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="!ingredients" class="default-text">
+  Go back to home page to enter your ingredients to analyze it !
+</div>

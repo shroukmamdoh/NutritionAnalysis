@@ -1,1 +1,7 @@
-<p>analysis-result works!</p>
+<div class="analysis-info-page">
+  <div class="header">
+    <a (click)="navigateToHome()"> Back </a>
+  </div>
+  <app-ingredient-details [ingredients]="ingredientInfo.ingredients"></app-ingredient-details>
+  <button *ngIf="ingredientInfo.ingredients">Total Nutrition</button>
+</div>

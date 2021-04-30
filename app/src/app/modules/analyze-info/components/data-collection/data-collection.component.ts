@@ -10,7 +10,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { AnalysisService } from '../../services/analysis.service';
 import { IngredientFullInfo } from '../../models/ingredient-full-info.interface';
-import { ToastrService } from 'ngx-toastr'
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-data-collection',
   templateUrl: './data-collection.component.html',
@@ -45,17 +45,24 @@ export class DataCollectionComponent implements OnInit {
         (data: IngredientFullInfo) => {
           console.log('data', data);
 
-          if(data.totalWeight) {
+          if (data.totalWeight) {
             this.analysisService.currentIngredientChange.next(data);
             this.router.navigateByUrl('home/result');
           } else {
-            this.toastrService.error( `Make sure you enter right data`,`Failed to submit the recipe`)
+            this.toastrService.error(
+              `Make sure you enter right data`,
+              `Failed to submit the recipe`
+            );
           }
-
         },
         (error) => {
-          console.log('error', error)
-          this.toastrService.error(`${Object.values(error.error).reduce((a: string, b: string) => a + ' ' + b)}`, `Failed to submit the recipe`)
+          console.log('error', error);
+          this.toastrService.error(
+            `${Object.values(error.error).reduce(
+              (a: string, b: string) => a + ' ' + b
+            )}`,
+            `Failed to submit the recipe`
+          );
         }
       );
   }

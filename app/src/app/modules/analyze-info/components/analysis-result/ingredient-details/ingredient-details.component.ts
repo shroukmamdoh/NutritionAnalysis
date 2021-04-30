@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IngredientFullInfo } from '../../../models/ingredient-full-info.interface';
 
 @Component({
   selector: 'app-ingredient-details',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ingredient-details.component.scss']
 })
 export class IngredientDetailsComponent implements OnInit {
-
+  @Input()
+  ingredients: []
   constructor() { }
 
   ngOnInit(): void {
