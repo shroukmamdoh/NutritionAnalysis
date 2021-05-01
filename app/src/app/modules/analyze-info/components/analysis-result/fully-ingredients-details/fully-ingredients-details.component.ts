@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IngredientFullInfo } from '../../../models/ingredient-full-info.interface';
+import { IngredientFullInfo, NearestDecimal } from '../../../models/ingredient-full-info.model';
 
 @Component({
   selector: 'app-fully-ingredients-details',
@@ -10,10 +10,9 @@ export class FullyIngredientsDetailsComponent implements OnInit {
   @Input()
   nutritionFacts: IngredientFullInfo
   constructor() { }
-  getQuntity(value) {
-    return Math.round((value + Number.EPSILON) * 100) / 100
-  }
   ngOnInit(): void {
   }
-
+  getQuntity(num) {
+    return NearestDecimal.getNearestDecimal(num)
+  }
 }

@@ -4,5 +4,5 @@
   </div>
   <app-ingredient-details [ingredients]="ingredientInfo.ingredients"></app-ingredient-details>
   <app-fully-ingredients-details [nutritionFacts]="ingredientInfo" *ngIf="isShowNutritionFacts && ingredientInfo.ingredients"></app-fully-ingredients-details>
-  <button *ngIf="ingredientInfo.ingredients" (click)="showNutritionFacts()">Total Nutrition</button>
+  <button *ngIf="ingredientInfo.ingredients" [ngClass]="{'showBtn': isShowNutritionFacts}" (click)="showNutritionFacts()">Total Nutrition</button>
 </div>

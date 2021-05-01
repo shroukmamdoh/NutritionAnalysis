@@ -9,7 +9,7 @@ import {
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { AnalysisService } from '../../services/analysis.service';
-import { IngredientFullInfo } from '../../models/ingredient-full-info.interface';
+import { IngredientFullInfo } from '../../models/ingredient-full-info.model';
 import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-data-collection',

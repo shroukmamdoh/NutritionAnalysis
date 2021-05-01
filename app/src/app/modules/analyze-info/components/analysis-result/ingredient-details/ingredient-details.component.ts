@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IngredientFullInfo } from '../../../models/ingredient-full-info.interface';
+import { NearestDecimal } from '../../../models/ingredient-full-info.model';
 
 @Component({
   selector: 'app-ingredient-details',
@@ -12,6 +12,9 @@ export class IngredientDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+  getQuntity(num) {
+    return NearestDecimal.getNearestDecimal(num)
   }
 
 }

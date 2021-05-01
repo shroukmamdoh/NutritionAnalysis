@@ -6,21 +6,22 @@
     line-height: 24px;
   }
   .alert-warning {
-    padding: 20px 0 1px 0;
+    padding: 6px 20px;
     color: #856404;
     background-color: #fff3cd;
     border-color: #ffeeba;
+    display: block;
+    svg {
+      margin-right: 0px;
+      path {
+        color: #ff5722;
+      }
+    }
     p.hint {
       font-weight: bold;
       display: flex;
       justify-content: center;
       align-items: center;
-      svg {
-        margin-right: 12px;
-        path {
-          color: #ff5722;
-        }
-      }
     }
   }
 }
@@ -34,6 +35,7 @@
     border-radius: 6px;
     padding: 18px;
     display: block;
+    min-width: 285px;
     &:focus {
       outline: #ddd !important;
     }
@@ -45,5 +47,24 @@
   .disabled {
     cursor: not-allowed !important;
     background-color: #b8cf9f !important;
+  }
+}
+
+@media (min-width: 560px) {
+  .alert-warning {
+    display: flex !important;
+    justify-content: center;
+    svg {
+      margin: 12px 12px 0 0 !important;
+    }
+  }
+  textarea {
+    width: 490px !important;
+  }
+}
+
+@media (min-width: 300px)and(max-width: 559px) {
+  textarea {
+    min-width: 248px !important;
   }
 }

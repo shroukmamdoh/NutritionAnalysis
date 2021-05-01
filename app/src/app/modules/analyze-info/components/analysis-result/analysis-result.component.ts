@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { IngredientFullInfo } from '../../models/ingredient-full-info.interface';
+import { IngredientFullInfo } from '../../models/ingredient-full-info.model';
 import { AnalysisService } from '../../services/analysis.service';
 
 @Component({
@@ -28,7 +28,6 @@ export class AnalysisResultComponent implements OnInit {
       .pipe(takeUntil(this._destroy$))
       .subscribe((result: IngredientFullInfo) => {
         this.ingredientInfo = result;
-        console.log('result', this.ingredientInfo);
       });
   }
   navigateToHome() {
