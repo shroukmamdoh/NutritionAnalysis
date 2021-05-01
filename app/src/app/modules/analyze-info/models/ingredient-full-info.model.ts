@@ -1,11 +1,12 @@
 import { Ingredient } from '../interfaces/ingredient.interface';
 
 export interface IngredientFullInfo {
+  uri: string;
   calories: number;
   cautions: [];
-  dietLabels: [];
-  healthLabels: [];
-  ingredients: [{ text: string; parsed: [Ingredient] }];
+  dietLabels?: [''];
+  healthLabels?: [];
+  ingredients: [{ text: string; parsed: [Ingredient] }, {}];
   totalDaily: {};
   totalNutrients: {};
   totalWeight: number;

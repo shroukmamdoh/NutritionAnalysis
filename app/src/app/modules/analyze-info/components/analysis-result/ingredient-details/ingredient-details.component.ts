@@ -8,7 +8,7 @@ import { NearestDecimal } from '../../../models/ingredient-full-info.model';
 })
 export class IngredientDetailsComponent implements OnInit {
   @Input()
-  ingredients: []
+  ingredients: any
   constructor() { }
 
   ngOnInit(): void {

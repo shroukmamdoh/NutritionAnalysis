@@ -23,6 +23,8 @@ export class DataCollectionComponent implements OnInit {
     this._destroy$.complete();
   }
   analyzeForm: FormGroup;
+  ingredientInfo: IngredientFullInfo
+  $currentIngredientChange = this.analysisService.currentIngredientChange
   constructor(
     private analysisService: AnalysisService,
     private fb: FormBuilder,
@@ -37,16 +39,15 @@ export class DataCollectionComponent implements OnInit {
   }
 
   submit() {
-    const ingredientArray = this.analyzeForm.value.ingredient.split(/\r?\n/);
+    const ingredientArray = this.getMultiLines(this.analyzeForm.value.ingredient)
     this.analysisService
       .analyzeData(ingredientArray)
       .pipe(takeUntil(this._destroy$))
       .subscribe(
         (data: IngredientFullInfo) => {
-          console.log('data', data);
-
+          this.ingredientInfo = data
           if (data.totalWeight) {
-            this.analysisService.currentIngredientChange.next(data);
+            this.$currentIngredientChange.next(this.ingredientInfo);
             this.router.navigateByUrl('home/result');
           } else {
             this.toastrService.error(
@@ -56,7 +57,6 @@ export class DataCollectionComponent implements OnInit {
           }
         },
         (error) => {
-          console.log('error', error);
           this.toastrService.error(
             `${Object.values(error.error).reduce(
               (a: string, b: string) => a + ' ' + b
@@ -65,5 +65,9 @@ export class DataCollectionComponent implements OnInit {
           );
         }
       );
+  }
+
+  getMultiLines(text) {
+    return text.split(/\r?\n/);
   }
 }

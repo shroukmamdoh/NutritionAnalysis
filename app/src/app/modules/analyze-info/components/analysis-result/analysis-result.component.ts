@@ -18,14 +18,14 @@ export class AnalysisResultComponent implements OnInit {
   }
   ingredientInfo: IngredientFullInfo;
   isShowNutritionFacts = false;
+  $currentIngredientChange = this.analysisService.currentIngredientChange
   constructor(
     private analysisService: AnalysisService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.analysisService.currentIngredientChange
-      .pipe(takeUntil(this._destroy$))
+    this.$currentIngredientChange.pipe(takeUntil(this._destroy$))
       .subscribe((result: IngredientFullInfo) => {
         this.ingredientInfo = result;
       });
